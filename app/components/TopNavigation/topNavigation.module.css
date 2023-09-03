@@ -1,0 +1,8 @@
+.navigation-main {
+    @apply flex content-center justify-center w-full h-16
+
+}
+
+.navigation-main > a {
+    margin: 1rem;
+}
