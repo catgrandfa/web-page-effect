@@ -1,8 +1,7 @@
 .navigation-main {
-    @apply flex content-center justify-center w-full h-16
-
+  @apply flex content-center justify-center w-full h-16;
 }
 
 .navigation-main > a {
-    padding: 1rem;
+  padding: 1rem;
 }

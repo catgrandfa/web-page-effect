@@ -1,10 +1,17 @@
-import React, {FC} from 'react';
+import React, { FC } from "react";
 
-type BottomDeclarationProps = {}
+type BottomDeclarationProps = {};
 
 const BottomDeclaration: FC<BottomDeclarationProps> = (props) => {
-    const {} = props
-    return <div>power by <a href={'https://github.com/catgrandfa'} className={'underline'}>catgrandfa</a></div>
-}
+  const {} = props;
+  return (
+    <div>
+      power by
+      <a href={"https://github.com/catgrandfa"} className={"underline"}>
+        catgrandfa
+      </a>
+    </div>
+  );
+};
 
 export default BottomDeclaration;
