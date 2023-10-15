@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useMemo, useState } from "react";
 import Link from "next/link";
 import styles from "./topNavigation.module.css";
 import MenuShow from "@/app/components/TopNavigation/components/MenuShow";
@@ -7,8 +7,11 @@ import {
   IMenuItemProps,
   menuData,
 } from "@/app/components/TopNavigation/menuConst";
+import classNames from "classnames";
 
 type TopNavigationProps = {};
+
+export const subMenuHeight = 40;
 
 /**
  * Renders the top navigation component.
@@ -24,6 +27,11 @@ const TopNavigation: FC<TopNavigationProps> = (props) => {
   // State to track whether the menu is being shown or not
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
 
+  // 菜单高度
+  const menuLength = useMemo(
+    () => ((isShowMenu && showMenu?.length) || 0) * subMenuHeight + 44,
+    [showMenu, isShowMenu]
+  );
   /**
    * Handles the hover events for the menu items.
    * @param menuId - The ID of the menu item.
@@ -33,7 +41,8 @@ const TopNavigation: FC<TopNavigationProps> = (props) => {
     if (menuId === 0) return updateIsShowMenu(false);
 
     // Find the menu item based on the menu ID and set it as the shown menu
-    setShowMenu(menuData.find((item) => item.menuId === menuId)?.menuItem);
+    if (menuData.length > 0)
+      setShowMenu(menuData.find((item) => item.menuId === menuId)?.menuItem);
 
     // Show the menu
     updateIsShowMenu(true);
@@ -49,8 +58,8 @@ const TopNavigation: FC<TopNavigationProps> = (props) => {
 
   return (
     <div
-      className={"bg-amber-300"}
-      style={{ height: "auto" }}
+      className={classNames("bg-amber-300", styles["menu-main"])}
+      style={{ height: menuLength }}
       onMouseLeave={() => updateIsShowMenu(false)}
     >
       <div className={styles["navigation-main"]}>

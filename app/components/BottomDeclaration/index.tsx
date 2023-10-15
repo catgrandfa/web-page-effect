@@ -6,8 +6,8 @@ const BottomDeclaration: FC<BottomDeclarationProps> = (props) => {
   const {} = props;
   return (
     <div>
-      power by
-      <a href={"https://github.com/catgrandfa"} className={"underline"}>
+      power by &nbsp;
+      <a href={"https://github.com/catgrandfa"} className={"underline"} target="_blank">
         catgrandfa
       </a>
     </div>

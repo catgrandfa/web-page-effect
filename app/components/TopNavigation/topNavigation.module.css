@@ -1,7 +1,12 @@
 .navigation-main {
-  @apply flex content-center justify-center w-full h-16;
+  @apply flex content-center justify-center w-full;
+}
+
+.menu-main {
+  transition: height 0.5s;
+  overflow: hidden;
 }
 
 .navigation-main > a {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
