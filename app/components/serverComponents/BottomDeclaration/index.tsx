@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { FC } from "react";
 
 type BottomDeclarationProps = {};
@@ -5,15 +6,15 @@ type BottomDeclarationProps = {};
 const BottomDeclaration: FC<BottomDeclarationProps> = (props) => {
     const {} = props;
     return (
-        <div>
-            power by &nbsp;
-            <a
+        <div className="flex justify-center align-middle">
+            <span> power by &nbsp;</span>
+            <Link
                 href={"https://github.com/catgrandfa"}
                 className={"underline"}
                 target="_blank"
             >
                 catgrandfa
-            </a>
+            </Link>
         </div>
     );
 };
